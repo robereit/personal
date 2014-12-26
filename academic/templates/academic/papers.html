@@ -1,0 +1,12 @@
+{% extends "academic/base_academic.html" %}
+
+{% block content %}
+<h2> Papers </h2>
+
+<ul>
+{% for author_list, paper in papers %}
+<li> {{ author_list }}. {{ paper.title }}. {{ paper.publication_venue }} {% if paper.volume %}{{ paper.volume }}({{ paper.number }}):{% endif %}{{ paper.year }}.</li>
+{% endfor %}
+</ul>
+
+{% endblock content %}
