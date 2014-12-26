@@ -15,13 +15,19 @@ class Paper(models.Model):
     number = models.SmallIntegerField()
 
 class Course(models.Model):
-    title = models.CharField(max_length=50)
+    course_code = models.CharField(max_length=50, default="")
+    title = models.CharField(max_length=100)
     place = models.CharField(max_length=250)
     length = models.CharField(max_length=25)
+
+    def __str__(self):
+        return self.course_code + " -- " + self.title
 
 class CourseInstance(models.Model):
     course = models.ForeignKey(Course)
     role = models.CharField(max_length=20)
-    year = models.DateField()
+    semester = models.CharField(max_length=100, default="")
     
+    def __str__(self):
+        return str(self.course) + ", " + self.semester
     
