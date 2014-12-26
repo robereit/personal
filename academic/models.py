@@ -17,7 +17,7 @@ class Paper(models.Model):
 class Course(models.Model):
     title = models.CharField(max_length=50)
     place = models.CharField(max_length=250)
-    length = models.SmallIntegerField()
+    length = models.CharField(max_length=25)
 
 class CourseInstance(models.Model):
     course = models.ForeignKey(Course)

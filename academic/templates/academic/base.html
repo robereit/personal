@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> {% block title %} Robert Robere  {% endblock %}</title>
+  </head>
+  <body>
+    <div id="topmatter"> 
+      {% block topmatter %}
+      <div id="headline">
+	<h1> {{ headline }} </h1>
+      </div>
+      <div id="top-search">
+	{% block topsearch %}{% endblock %}
+      </div>
+      <div id="bottom-search">
+	{% block bottomsearch %}{% endblock %}
+      </div>
+      {% endblock topmatter %}
+    </div>
+    <div id="content">
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>
